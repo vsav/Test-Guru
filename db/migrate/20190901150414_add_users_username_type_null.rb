@@ -1,11 +1,7 @@
 class AddUsersUsernameTypeNull < ActiveRecord::Migration[6.0]
-  def up
+  def change
     change_column_null(:users, :username, false)
-    change_column_null(:users, :type, false)
-  end
-
-  def down
-    change_column_null(:users, :username, true)
-    change_column_null(:users, :type, true)
+    change_column_null(:users, :admin, false)
+    change_column_default(:users, :admin, from: true, to: false)
   end
 end

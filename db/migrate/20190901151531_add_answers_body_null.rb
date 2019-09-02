@@ -1,9 +1,6 @@
 class AddAnswersBodyNull < ActiveRecord::Migration[6.0]
-  def up
+  def change
     change_column_null(:answers, :body, false)
-  end
-
-  def down
-    change_column_null(:answers, :body, true)
+    change_column_null(:answers, :correct, false)
   end
 end
