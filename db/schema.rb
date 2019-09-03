@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_02_141816) do
+ActiveRecord::Schema.define(version: 2019_09_03_181154) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 2019_09_02_141816) do
     t.string "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "join_user_tests", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "test_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["test_id"], name: "index_join_user_tests_on_test_id"
+    t.index ["user_id"], name: "index_join_user_tests_on_user_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -51,6 +60,8 @@ ActiveRecord::Schema.define(version: 2019_09_02_141816) do
   end
 
   add_foreign_key "answers", "questions"
+  add_foreign_key "join_user_tests", "tests"
+  add_foreign_key "join_user_tests", "users"
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
 end

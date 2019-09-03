@@ -110,3 +110,13 @@ answers = Answer.create!([{ body: 'HyperText Markup Language', question_id: ques
                           { body: 'Anthony Hopkins', question_id: questions[19].id, correct: false },
                           { body: 'Samuel L. Jackson', question_id: questions[19].id, correct: false },])
 
+JoinUserTest.create!([{ user_id: users[0].id, test_id: tests[0].id },
+                  { user_id: users[0].id, test_id: tests[1].id },
+                  { user_id: users[0].id, test_id: tests[2].id },
+                  { user_id: users[1].id, test_id: tests[1].id },
+                  { user_id: users[2].id, test_id: tests[1].id },
+                  { user_id: users[2].id, test_id: tests[5].id },
+                  { user_id: users[2].id, test_id: tests[6].id },
+                  { user_id: users[3].id, test_id: tests[1].id },
+                  { user_id: users[3].id, test_id: tests[7].id }])
+
