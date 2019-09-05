@@ -7,26 +7,20 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 categories = Category.create!([{ title: 'Programming' }, { title: 'Auto' },
-                 { title: 'Music' }, { title: 'Movies' }])
-=begin
-programming_id = Category.find_by(title: 'Programming').id
-auto_id = Category.find_by(title: 'Auto').id
-music_id = Category.find_by(title: 'Music').id
-movies_id = Category.find_by(title: 'Movies').id
-=end
-
-tests = Test.create!([{ title: 'HTML', category_id: categories[0].id, level: 0 },
-                      { title: 'Ruby', category_id: categories[0].id, level: 1 },
-                      { title: 'RoR', category_id: categories[0].id, level: 1 },
-                      { title: 'Manufacturers', category_id: categories[1].id, level: 0 },
-                      { title: 'Autosport', category_id: categories[1].id, level: 2 },
-                      { title: 'Music history', category_id: categories[2].id, level: 2 },
-                      { title: 'Musical instruments', category_id: categories[2].id, level: 1 },
-                      { title: 'Movies history', category_id: categories[3].id, level: 1 },
-                      { title: 'Actors', category_id: categories[3].id, level: 0 }])
+                               { title: 'Music' }, { title: 'Movies' }])
 
 users = User.create!([{ username: 'Luke' }, { username: 'Han' },
                       { username: 'Lea' }, { username: 'Lando' }])
+
+tests = Test.create!([{ title: 'HTML', category_id: categories[0].id, level: 0, author: users[0] },
+                      { title: 'Ruby', category_id: categories[0].id, level: 1, author: users[0] },
+                      { title: 'RoR', category_id: categories[0].id, level: 1, author: users[0] },
+                      { title: 'Manufacturers', category_id: categories[1].id, level: 0, author: users[1] },
+                      { title: 'Autosport', category_id: categories[1].id, level: 2, author: users[1] },
+                      { title: 'Music history', category_id: categories[2].id, level: 2, author: users[2] },
+                      { title: 'Musical instruments', category_id: categories[2].id, level: 1, author: users[2] },
+                      { title: 'Movies history', category_id: categories[3].id, level: 1, author: users[3] },
+                      { title: 'Actors', category_id: categories[3].id, level: 0, author: users[3] }])
 
 questions = Question.create!([{ body: 'What abbreviation HTML means?', test_id: tests[0].id },
                               { body: "Who is 'Matz'?", test_id: tests[1].id },
@@ -47,7 +41,7 @@ questions = Question.create!([{ body: 'What abbreviation HTML means?', test_id: 
                               { body: 'First color movie was created in?', test_id: tests[7].id },
                               { body: 'Who was the first movie star', test_id: tests[7].id },
                               { body: 'First Johnny Depp movie', test_id: tests[8].id },
-                              { body: "Hollywood actors who've appeared in the most movies", test_id: tests[8].id },])
+                              { body: "Hollywood actors who've appeared in the most movies", test_id: tests[8].id }])
 
 answers = Answer.create!([{ body: 'HyperText Markup Language', question_id: questions[0].id, correct: true },
                           { body: 'Hierarchy Transfer Method Language', question_id: questions[0].id, correct: false },
@@ -108,7 +102,7 @@ answers = Answer.create!([{ body: 'HyperText Markup Language', question_id: ques
                           { body: 'Edward Scissorhands', question_id: questions[18].id, correct: false },
                           { body: 'Michael Caine', question_id: questions[19].id, correct: true },
                           { body: 'Anthony Hopkins', question_id: questions[19].id, correct: false },
-                          { body: 'Samuel L. Jackson', question_id: questions[19].id, correct: false },])
+                          { body: 'Samuel L. Jackson', question_id: questions[19].id, correct: false }])
 
 UserTest.create!([{ user_id: users[0].id, test_id: tests[0].id },
                   { user_id: users[0].id, test_id: tests[1].id },
