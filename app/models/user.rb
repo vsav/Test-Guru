@@ -3,7 +3,9 @@ class User < ApplicationRecord
   has_many :user_tests, dependent: :destroy
   has_many :tests, through: :user_tests
 
+  scope :tests_by_level, ->(level) { where(level: level) }
+
   def show_tests(level)
-    tests.where('level = ?', level)
+    tests.tests_by_level(level)
   end
 end
