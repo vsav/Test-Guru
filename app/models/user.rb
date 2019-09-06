@@ -4,6 +4,6 @@ class User < ApplicationRecord
   has_many :tests, through: :user_tests
 
   def show_tests(level)
-    Test.joins(:user_tests).where('user_id = ? AND level = ?', id, level)
+    tests.where('level = ?', level)
   end
 end
