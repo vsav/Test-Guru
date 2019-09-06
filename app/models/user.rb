@@ -1,6 +1,9 @@
 class User < ApplicationRecord
+  has_many :tests_by, class_name: 'Test', foreign_key: :author_id, dependent: :nullify
+  has_many :user_tests, dependent: :destroy
+  has_many :tests, through: :user_tests
+
   def show_tests(level)
-    Test.joins('JOIN user_tests ON tests.id = user_tests.test_id')
-        .where('user_tests.user_id = ? AND level = ?', id, level)
+    tests.where('level = ?', level)
   end
 end
