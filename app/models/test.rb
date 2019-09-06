@@ -14,8 +14,11 @@ class Test < ApplicationRecord
             .where('categories.title = ?', category.capitalize)
         }
 
+  validates :title, presence: true
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :title, uniqueness: { scope: :level }
+
   def self.tests_by_category(category)
     by_category(category).order(id: :desc).pluck(:title)
   end
 end
-
