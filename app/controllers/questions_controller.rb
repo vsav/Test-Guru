@@ -13,9 +13,7 @@ class QuestionsController < ApplicationController
     render plain: @question.body
   end
 
-  def new
-
-  end
+  def new; end
 
   def create
     @test.questions << Question.create(question_params)
@@ -30,7 +28,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:test_id, :body)
+    params.require(:question).permit(:body)
   end
 
   def find_question
