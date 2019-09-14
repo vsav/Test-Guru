@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def current_year
-    Date.today.year
+    Date.current.year
   end
 
   def project_repo(author, repo)
