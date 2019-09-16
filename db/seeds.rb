@@ -35,7 +35,7 @@ questions = Question.create!([{ body: 'What abbreviation HTML means?', test: tes
                               { body: 'Which F1 team is most successful?', test: tests[4] },
                               { body: 'Most powerful road legal car in the world?', test: tests[3] },
                               { body: 'Fastest F1 pit stop', test: tests[4] },
-                              { body: 'Nürburgring lap record?', test: tests[4] },
+                              { body: 'Longest circuit?', test: tests[4] },
                               { body: 'Largest music festival', test: tests[5] },
                               { body: 'Band who released the most studio albums', test: tests[5] },
                               { body: 'Loudest musical instrument', test: tests[6] },
