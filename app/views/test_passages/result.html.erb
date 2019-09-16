@@ -1,0 +1,14 @@
+<h1>The <%= @test_passage.test.title %> test was completed!</h1>
+
+
+<p>
+  Correct answers: <%=@test_passage.correct_questions%> of <%=@test_passage.test_questions_count %>
+</p>
+<p>
+  Result:<span class=<%= @test_passage.test_passed? ? 'passed' : 'failed' %>> <%= @test_passage.test_result%>%</span>
+</p>
+<p>
+  Passed:<span class=<%= @test_passage.test_passed? ? 'passed' : 'failed' %>> <%= @test_passage.test_passed? %></span>
+</p>
+
+<%= link_to 'Back to tests', tests_path %>
