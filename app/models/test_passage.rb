@@ -1,11 +1,12 @@
 class TestPassage < ApplicationRecord
+
+  SUCCESS = 85.0
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_save :before_save_set_next_question
-
-  SUCCESS = 85.0
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
@@ -39,8 +40,7 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    answer_ids ||= []
-    correct_answers.ids.sort == answer_ids.map(&:to_i).sort
+    correct_answers.ids.sort == Array(answer_ids).map(&:to_i).sort
   end
 
   def correct_answers
@@ -48,7 +48,7 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    if current_question.nil?
+    if new_record?
       self.current_question = test.questions.first
     else
       test.questions.order(:id).where('id > ?', current_question.id).first
