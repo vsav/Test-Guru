@@ -1,11 +1,17 @@
 module TestPassagesHelper
-  def test_summary(test)
+  def test_summary_message(test)
     if test.test_passed?
-      @message = "You have passed the test"
-      @result = 'passed'
+      'You have passed the test'
     else
-      @message = "You have failed the test"
-      @result = 'failed'
+      'You have failed the test'
+    end
+  end
+
+  def test_summary_score_color(test)
+    if test.test_passed?
+      'passed'
+    else
+      'failed'
     end
   end
 end

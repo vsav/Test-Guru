@@ -1,0 +1,20 @@
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto;
+  grid-gap: 1em;
+  align-items: center;
+}
+
+.logo {
+  grid_column: 1;
+  font-size: 1.2em;
+  text-align: start;
+}
+
+.nav a{
+  text-decoration: none;
+}
+.account {
+  text-align: end;
+}

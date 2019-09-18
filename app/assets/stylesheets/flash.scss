@@ -1,0 +1,16 @@
+.flash {
+  border: 1px solid;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.flash.alert {
+  border-color: #ef2727;
+  color: #ef2727;
+}
+
+.flash.notice {
+  border-color: limegreen;
+  color: limegreen;
+}
+
