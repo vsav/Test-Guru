@@ -1,0 +1,14 @@
+<div class="nav">
+  <div class="logo">
+    <%= link_to 'Test Guru', root_path %>
+  </div>
+  <div class="account">
+    <% if logged_in? %>
+      Welcome, <strong><%= current_user.username %></strong> Guru
+      | <%= link_to 'logout', logout_path, method: :delete, data: { confirm: 'Are you sure you want to logout?' } %>
+    <% else %>
+      <%= link_to 'login', login_path %> |
+      <%= link_to 'register', signup_path %>
+    <% end %>
+  </div>
+</div>
