@@ -8,9 +8,6 @@ class User < ApplicationRecord
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
 
-  validates :email, uniqueness: { case_sensitive: false, message: '%{value} is already taken' }, on: :create
-  validates_format_of :email, with: EMAIL_FORMAT, on: :create
-
   scope :tests_by_level, ->(level) { where(level: level) }
 
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
