@@ -3,12 +3,12 @@
     <%= link_to 'Test Guru', root_path %>
   </div>
   <div class="account">
-    <% if logged_in? %>
+    <% if user_signed_in? %>
       Welcome, <strong><%= current_user.username %></strong> Guru
-      | <%= link_to 'logout', logout_path, method: :delete, data: { confirm: 'Are you sure you want to logout?' } %>
+      | <%= link_to 'logout', destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure you want to logout?' } %>
     <% else %>
-      <%= link_to 'login', login_path %> |
-      <%= link_to 'register', signup_path %>
+      <%= link_to 'login', new_user_session_path %> |
+      <%= link_to 'register', new_user_registration_path %>
     <% end %>
   </div>
 </div>
