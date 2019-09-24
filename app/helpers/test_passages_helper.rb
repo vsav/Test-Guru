@@ -1,9 +1,9 @@
 module TestPassagesHelper
   def test_summary_message(test)
     if test.test_passed?
-      'You have passed the test'
+      t('.success_message')
     else
-      'You have failed the test'
+      t('.failed_message')
     end
   end
 
