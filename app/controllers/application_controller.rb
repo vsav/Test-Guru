@@ -9,7 +9,10 @@ class ApplicationController < ActionController::Base
     else
       root_path
     end
+  end
 
+  def default_url_options
+    { lang: (I18n.locale unless I18n.locale == I18n.default_locale) }
   end
 
   protected
@@ -21,6 +24,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = I18n.locale_available?(params[:lang]) || I18n.default_locale
+    I18n.locale = I18n.locale_available?(params[:lang]) ? params[:lang] : I18n.default_locale
   end
 end
