@@ -1,4 +1,4 @@
-<h1>Create new test</h1>
+<h1><%= t('.header') %></h1>
 
 <%= render 'form' %>
-<p> <%= link_to 'Back to tests list', admin_tests_path %></p>
+<p> <%= link_to t('.back_to_tests_link'), admin_tests_path %></p>
