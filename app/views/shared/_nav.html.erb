@@ -1,8 +1,6 @@
-<div class="nav">
-  <div class="logo">
-    <%= link_to t('.test_guru'), root_path %>
-  </div>
-  <div class="account">
+<nav class="navbar navbar-light bg-light">
+  <%= link_to t('.test_guru'), root_path, class: 'navbar-brand' %>
+  <span class="navbar-text">
     <% if user_signed_in? %>
       <%= t('.welcome', username: current_user.username) %>
       | <%= link_to t('.logout'), destroy_user_session_path, method: :delete, data: { confirm: t('.logout_confirm') } %>
@@ -10,5 +8,5 @@
       <%= link_to t('.login'), new_user_session_path %> |
       <%= link_to t('.register'), new_user_registration_path %>
     <% end %>
-  </div>
-</div>
+  </span>
+</nav>
