@@ -1,13 +1,13 @@
-<h1>The <%= @test_passage.test.title %> test was completed!</h1>
+<h1><%= t'.header', title: @test_passage.test.title %></h1>
 
 
 <p>
-  Correct answers: <%=@test_passage.correct_questions%> of <%=@test_passage.test_questions_count %>
+  <%= t('.result_correct_answers', correct: @test_passage.correct_questions, total: @test_passage.test_questions_count ) %>
 </p>
 
     <p>
-      <%= test_summary_message(@test_passage) %> with result:
-      <span class=<%= test_summary_score_color(@test_passage) %>> <%= @test_passage.test_result%>%</span>
+      <%= test_summary_message(@test_passage) %>
+      <span class=<%= test_summary_score_color(@test_passage) %>> <%= @test_passage.test_result %>%</span>
     </p>
 
-<%= link_to 'Back to tests', tests_path %>
+<%= link_to t('test_passages.show.back_to_tests_link'), tests_path %>
