@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :tests_by, class_name: 'Test', foreign_key: :author_id, dependent: :nullify
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
+  has_many :gists, dependent: :destroy
 
   scope :tests_by_level, ->(level) { where(level: level) }
 
