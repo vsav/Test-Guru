@@ -1,3 +1,9 @@
+<div class="container">
+  <div class="row mt-3">
+    <div class="col col-md-8">
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
   <h1><%= @question.test.title %> Question</h1>
 
   <p><%= @question.body %></p>
@@ -10,5 +16,10 @@
 
   <p> <%= link_to 'Edit', edit_admin_question_path(@question) %></p>
   <p> <%= link_to 'Back to test questions list', admin_test_path(@question.test) %></p>
-
+        </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
 
