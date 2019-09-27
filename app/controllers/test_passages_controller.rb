@@ -19,7 +19,7 @@ class TestPassagesController < ApplicationController
   def gist
     result = GistQuestionService.new(@test_passage.current_question).call
     @gist = Gist.new(question: @test_passage.current_question,
-                     user: @test_passage.user, gist_url: result[:html_url])
+                     user: @test_passage.user, url: result[:html_url])
 
     if @gist.save!
       flash[:notice] = t('.success', url: (helpers.link_to t('.view_gist'), @gist.gist_url, target: '_blank'))
