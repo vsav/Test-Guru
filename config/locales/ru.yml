@@ -47,6 +47,10 @@ ru:
       result_correct_answers: "Правильных ответов: %{correct} из %{total}"
       success_message: 'Вы успешно завершили тест. Ваш результат: '
       failed_message: 'Вы провалили тест. Ваш результат: '
+    gist:
+      success: "Gist успешно сохранен. %{url}"
+      failure: "Во время сохранения gist произошла ошибка"
+      view_gist: "Ссылка на Gist"
 
     show:
       header: "Выполняется тест %{title}"
@@ -63,6 +67,7 @@ ru:
       index:
         header: 'Доступные тесты'
         new_test: 'Создать новый тест'
+        view_gists: 'Посмотреть gists'
         title: 'Название'
         level: 'Уровень'
         questions: 'Вопросов'
@@ -76,6 +81,15 @@ ru:
         header: 'Создать новый тест'
         back_to_tests_link: 'К списку тестов'
 
+    gists:
+      index:
+        header: 'Все доступные gists:'
+        question: 'Вопрос'
+        url: 'Ссылка на gist'
+        user: 'Email пользователя'
+      gist:
+        gist_url: 'Ссылка на gist'
+
     nav:
       test_guru: 'Тест Гуру'
       admin_panel: 'Режим администратора'
@@ -83,8 +97,12 @@ ru:
       logout: 'Выйти'
       logout_confirm: 'Вы уверены, что хотите выйти?'
 
-
+  services:
+    gist_question_service:
+      description: "Вопрос из теста %{test_title} приложения TestGuru"
 
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+

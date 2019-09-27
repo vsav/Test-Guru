@@ -1,19 +1,21 @@
-<p>
-  <strong>Title:</strong>
-  <%= @test.title %>
-</p>
+<div class="container">
+  <p>
+    <strong>Title:</strong>
+    <%= @test.title %>
+  </p>
 
-<p>
-  <strong>Level:</strong>
-  <%= @test.level %>
-</p>
+  <p>
+    <strong>Level:</strong>
+    <%= @test.level %>
+  </p>
 
-<p><strong>Questions:</strong></p>
+  <p><strong>Questions:</strong></p>
 
-<table>
-  <%= render @questions %>
-</table>
+  <table>
+    <%= render @questions %>
+  </table>
 
-<p> <%= link_to 'Create new question', new_admin_test_question_path(@test) %></p>
-<p> <%= link_to 'Edit test', edit_admin_test_path(@test) %></p>
-<p> <%= link_to 'Back to tests list', admin_tests_path %></p>
+  <p> <%= link_to 'Create new question', new_admin_test_question_path(@test) %></p>
+  <p> <%= link_to 'Edit test', edit_admin_test_path(@test) %></p>
+  <p> <%= link_to 'Back to tests list', admin_tests_path %></p>
+</div>

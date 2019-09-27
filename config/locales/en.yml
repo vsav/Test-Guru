@@ -40,6 +40,10 @@ en:
       result_correct_answers: "Correct answers: %{correct} of %{total}"
       success_message: 'You have successfully completed the test. Your result: '
       failed_message: 'You have failed the test. Your result: '
+    gist:
+      success: "Gist was successfully saved. View %{url}"
+      failure: "There is an error while saving gist"
+      view_gist: "Gist link"
     show:
       header: "Passing the %{title} test"
       question_number: "Question %{current} of %{total}"
@@ -55,6 +59,7 @@ en:
       index:
         header: 'Available tests'
         new_test: 'Create new test'
+        view_gists: 'Show gists'
         title: 'Title'
         level: 'Level'
         questions: 'Questions'
@@ -68,6 +73,15 @@ en:
         header: 'Create new test'
         back_to_tests_link: 'Back to tests'
 
+    gists:
+      index:
+        header: 'All available gists:'
+        question: 'Question'
+        url: 'Gist URL'
+        user: 'User email'
+      gist:
+        gist_url: 'Gist URL'
+
     nav:
       test_guru: 'Test Guru'
       admin_panel: 'Admin mode'
@@ -75,6 +89,12 @@ en:
       logout: 'Logout'
       logout_confirm: 'Are you sure you want to logout?'
 
+  services:
+    gist_question_service:
+      description: "Question from test %{test_title} of TestGuru app"
+
   tests_mailer:
     completed_test:
       subject: "You just completed the TestGuru test!"
+
+

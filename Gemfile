@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 # Use sqlite3 as the database for Active Record
@@ -34,6 +36,13 @@ gem 'rails-i18n', '~> 6.0.0'
 #UI
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+
+#Networking
+gem 'faraday'
+
+#API
+gem 'octokit', '~> 4.0'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
