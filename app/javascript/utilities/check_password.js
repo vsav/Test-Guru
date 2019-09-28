@@ -3,8 +3,8 @@ document.addEventListener('turbolinks:load', function() {
 });
 
 function checkPassword() {
-    let password = document.getElementById('user_password');
-    let passwordConfirmation = document.getElementById('user_password_confirmation');
+    var password = document.getElementById('user_password');
+    var passwordConfirmation = document.getElementById('user_password_confirmation');
 
     if (passwordConfirmation.value === '') {
         document.querySelector('.octicon-circle-slash').classList.add('hide');
