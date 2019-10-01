@@ -18,7 +18,7 @@ class TestPassage < ApplicationRecord
   end
 
   def test_result
-    (correct_questions.to_f / test.questions.count * 100).round(1)
+    (correct_questions.to_f / test_questions_count * 100).round(1)
   end
 
   def test_passed?
@@ -31,6 +31,10 @@ class TestPassage < ApplicationRecord
 
   def test_questions_count
     test.questions.count
+  end
+
+  def progress
+    (current_question_number.to_f / test_questions_count * 100).round(1)
   end
 
   private
