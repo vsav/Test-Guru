@@ -1,5 +1,6 @@
 document.addEventListener('turbolinks:load', function() {
-    document.getElementById('user_password_confirmation').addEventListener('input', checkPassword);
+    passwordConfirmationField = document.getElementById('user_password_confirmation');
+        if (passwordConfirmationField) { addEventListener('input', checkPassword) }
 });
 
 function checkPassword() {

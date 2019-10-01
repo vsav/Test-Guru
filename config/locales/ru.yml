@@ -57,6 +57,7 @@ ru:
       question_number: "Вопрос %{current} из %{total}"
       confirm: 'Подтвердить и продолжить'
       back_to_tests_link: 'К списку тестов'
+      progress: 'Текущий прогресс'
 
   admin:
     tests:
@@ -80,6 +81,8 @@ ru:
       new:
         header: 'Создать новый тест'
         back_to_tests_link: 'К списку тестов'
+      form_inline:
+        submit: 'OK'
 
     gists:
       index:
