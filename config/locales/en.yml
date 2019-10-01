@@ -49,6 +49,7 @@ en:
       question_number: "Question %{current} of %{total}"
       confirm: 'Confirm and continue'
       back_to_tests_link: 'Back to tests'
+      progress: 'Current progress'
 
   admin:
     tests:
@@ -72,6 +73,8 @@ en:
       new:
         header: 'Create new test'
         back_to_tests_link: 'Back to tests'
+      form_inline:
+        submit: 'OK'
 
     gists:
       index:

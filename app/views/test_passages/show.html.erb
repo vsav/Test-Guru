@@ -4,7 +4,11 @@
 <p>
   <strong> <%= @test_passage.current_question.body %> </strong>
 </p>
-
+<div class="progress">
+  <%= content_tag :div, t('.progress'), class: 'progress-bar progress-bar-striped progress-bar-animated',
+                  role: 'progressbar',
+                  data: { progress: @test_passage.progress } %>
+</div>
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
