@@ -1,5 +1,5 @@
-class GuruLettersController
-  include ActiveModel::Model
+class GuruLettersController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[new create]
   def new
     @guru_letter = GuruLetter.new
   end
