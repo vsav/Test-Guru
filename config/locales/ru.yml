@@ -8,6 +8,10 @@ ru:
         title: 'Название'
         level: 'Уровень'
         category_id: 'Категория'
+      guru_letter:
+        name: 'Имя'
+        email: 'Email'
+        message: 'Сообщение'
       admin:
         test:
           title: 'Название'
@@ -30,6 +34,8 @@ ru:
       register: 'Зарегистрироваться'
       logout: 'Выйти'
       logout_confirm: 'Вы уверены, что хотите выйти?'
+    footer:
+      contact_us: 'Напишите нам'
 
   tests:
     index:
@@ -107,5 +113,21 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+
+  guru_letters_mailer:
+    contact_us:
+      subject: 'Новое сообщение от Гуру'
+
+  guru_letters:
+    new:
+      header: 'Напишите нам'
+    create:
+      success: 'Сообщение успешно отправлено'
+    form:
+      name: 'Ваше имя...'
+      email: 'Ваш email...'
+      message: 'Ваше сообщение...'
+      send: 'Отправить сообщение'
+
 
 
