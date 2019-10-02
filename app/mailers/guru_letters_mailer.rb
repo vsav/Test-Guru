@@ -1,5 +1,6 @@
 class GuruLettersMailer < ApplicationMailer
-  default from: 'vsavdev@gmail.com'
+  default to: -> { Admin.pluck(:email) },
+          from: 'vsavdev@gmail.com'
 
   def contact_us(guru_letter)
     @name = guru_letter.name
@@ -7,6 +8,6 @@ class GuruLettersMailer < ApplicationMailer
     @message = guru_letter.message
     @admin = User.find_by_type('Admin')
 
-    mail to: @admin.email
+    mail(subject: default_i18n_subject)
   end
 end
