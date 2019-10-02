@@ -9,11 +9,13 @@
 categories = Category.create!([{ title: 'Programming' }, { title: 'Auto' },
                                { title: 'Music' }, { title: 'Movies' }])
 
+=begin
 users = User.create!([{ username: 'Luke', email: 'luke@rebel.mail', password: 'qweqwe', type: 'Admin',
                       first_name: 'Luke', last_name: 'Skywalker' },
                       { username: 'Han', email: 'han@smuggler.mail', password: 'qweqwe' },
                       { username: 'Lea', email: 'lea@rebel.mail', password: 'qweqwe' },
                       { username: 'Lando', email: 'lando@cloud.city', password: 'qweqwe' }])
+=end
 
 tests = Test.create!([{ title: 'HTML', category: categories[0], level: 0, author: users[0] },
                       { title: 'Ruby', category: categories[0], level: 1, author: users[0] },
@@ -106,14 +108,3 @@ answers = Answer.create!([{ body: 'HyperText Markup Language', question: questio
                           { body: 'Michael Caine', question: questions[19], correct: true },
                           { body: 'Anthony Hopkins', question: questions[19], correct: false },
                           { body: 'Samuel L. Jackson', question: questions[19], correct: false }])
-
-UserTest.create!([{ user: users[0], test: tests[0] },
-                  { user: users[0], test: tests[1] },
-                  { user: users[0], test: tests[2] },
-                  { user: users[1], test: tests[1] },
-                  { user: users[2], test: tests[1] },
-                  { user: users[2], test: tests[5] },
-                  { user: users[2], test: tests[6] },
-                  { user: users[3], test: tests[1] },
-                  { user: users[3], test: tests[7] }])
-
