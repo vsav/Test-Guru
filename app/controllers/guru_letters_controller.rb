@@ -1,4 +1,5 @@
-class GuruLettersController < ApplicationController
+class GuruLettersController
+  include ActiveModel::Model
   def new
     @guru_letter = GuruLetter.new
   end
