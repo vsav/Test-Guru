@@ -97,7 +97,7 @@ ru:
         url: 'Ссылка на gist'
         user: 'Email пользователя'
       gist:
-        gist_url: 'Ссылка на gist'
+        url: 'Ссылка на gist'
 
     nav:
       test_guru: 'Тест Гуру'

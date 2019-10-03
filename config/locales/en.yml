@@ -89,7 +89,7 @@ en:
         url: 'Gist URL'
         user: 'User email'
       gist:
-        gist_url: 'Gist URL'
+        url: 'Gist URL'
 
     nav:
       test_guru: 'Test Guru'
