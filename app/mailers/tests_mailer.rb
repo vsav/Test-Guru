@@ -1,4 +1,5 @@
 class TestsMailer < ApplicationMailer
+  default from: 'vsavdev@gmail.com'
 
   def completed_test(test_passage)
     @user = test_passage.user
