@@ -1,0 +1,22 @@
+<%= form_for @guru_letter, url: create_guru_letter_url do |form| %>
+
+  <%= render 'shared/errors', resource: @guru_letter %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, placeholder: t('.name'), class: 'form-control', id: :guru_letter_name %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.email_field :email, placeholder: t('.email'), class: 'form-control', id: :guru_letter_email %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :message %>
+    <%= form.text_area :message, placeholder: t('.message'), class: 'form-control', rows: '15', id: :guru_letter_message %>
+  </div>
+
+  <%= form.submit t('.send'), class: 'btn btn-primary' %>
+
+<%end %>

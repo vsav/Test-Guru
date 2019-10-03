@@ -8,6 +8,10 @@ en:
         title: 'Title'
         level: 'Level'
         category_id: 'Category'
+      guru_letter:
+        name: 'Name'
+        email: 'Email'
+        message: 'Message'
     select:
       prompt: 'Select category'
 
@@ -23,6 +27,8 @@ en:
       register: 'Register'
       logout: 'Logout'
       logout_confirm: 'Are you sure you want to logout?'
+    footer:
+      contact_us: 'Contact us'
 
   tests:
     index:
@@ -83,7 +89,7 @@ en:
         url: 'Gist URL'
         user: 'User email'
       gist:
-        gist_url: 'Gist URL'
+        url: 'Gist URL'
 
     nav:
       test_guru: 'Test Guru'
@@ -100,4 +106,18 @@ en:
     completed_test:
       subject: "You just completed the TestGuru test!"
 
+  guru_letters_mailer:
+    contact_us:
+      subject: "New message from Guru"
+
+  guru_letters:
+    new:
+      header: 'Contact us'
+    create:
+      success: 'Message successfully sent'
+    form:
+      name: 'Your name...'
+      email: 'Your email...'
+      message: 'Your message...'
+      send: 'Send message'
 

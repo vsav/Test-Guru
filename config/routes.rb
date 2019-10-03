@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   root 'tests#index'
 
+  get 'contact_us', to: 'guru_letters#new', as: 'new_guru_letter'
+  post 'contact_us', to: 'guru_letters#create', as: 'create_guru_letter'
+
   resources :tests, only: :index do
     post :start, on: :member
   end

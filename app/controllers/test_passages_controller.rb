@@ -22,7 +22,7 @@ class TestPassagesController < ApplicationController
                      user: @test_passage.user, url: result[:html_url])
 
     if @gist.save!
-      flash[:notice] = t('.success', url: (helpers.link_to t('.view_gist'), @gist.gist_url, target: '_blank'))
+      flash[:notice] = t('.success', url: (helpers.link_to t('.view_gist'), @gist.url, target: '_blank'))
     else
       flash[:alert] = t('.failure')
     end
