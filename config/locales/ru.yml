@@ -17,6 +17,12 @@ ru:
           title: 'Название'
           level: 'Уровень'
           category_id: 'Категория'
+      badge:
+        title: 'Название'
+        image: 'URL изображения'
+        condition: 'Условие'
+        description: 'Описание'
+
     select:
       prompt: 'Выберите категорию'
 
@@ -105,6 +111,23 @@ ru:
       welcome: "Добро пожаловать, %{username} Гуру"
       logout: 'Выйти'
       logout_confirm: 'Вы уверены, что хотите выйти?'
+
+    badges:
+      index:
+        header: 'Все бейджи'
+      new:
+        header: 'Создать бейдж'
+
+      badge:
+        edit: 'Редактировать'
+        new:
+          new_badge: 'Создать бейдж'
+
+  badges:
+    index:
+      header: 'Все бейджи'
+
+  new_badge: 'Создать'
 
   services:
     gist_question_service:
