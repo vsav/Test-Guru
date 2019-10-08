@@ -9,5 +9,7 @@
       <%= test_summary_message(@test_passage) %>
       <span class=<%= test_summary_score_color(@test_passage) %>> <%= @test_passage.test_result %>%</span>
     </p>
-
+<div class="row">
+    <%= render @test_passage.user.badges %>
+</div>
 <%= link_to t('test_passages.show.back_to_tests_link'), tests_path %>
