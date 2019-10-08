@@ -53,7 +53,7 @@ class BadgeAwardService
   end
 
   def first_test
-    unless badges_count(:first_test).any?
+    unless badges_count(:first_test).positive?
       Badge.find_by_condition('first_test')
     end
   end
