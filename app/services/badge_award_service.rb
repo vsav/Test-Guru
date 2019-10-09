@@ -10,9 +10,7 @@ class BadgeAwardService
 
   def call
     @badges.select do |badge|
-      if @test_passage.test_passed?
-        send(badge.condition)
-      end
+      send("#{badge.condition}?", badge.condition_value)
     end
   end
 
@@ -26,35 +24,33 @@ class BadgeAwardService
     @user.badges.where('condition = ?', condition).count
   end
 
-  def all_in_category
-    tests_count = Test.by_category(@category).count
-    user_tests = @user.tests.by_category(@category)
+  def all_in_category?(category)
+    return unless @test_passage.test_passed? && @category == category
 
-    if tests_count == user_tests.uniq.count &&
-       full_tests_count(user_tests) > badges_count(:all_in_category)
-      Badge.find_by_condition('all_in_category')
+    tests_count = Test.by_category(category).count
+    user_tests = @user.tests.by_category(category)
+
+    tests_count == user_tests.uniq.count &&
+      full_tests_count(user_tests) > badges_count(:all_in_category)
+  end
+
+  def all_in_level?(level)
+    return unless @test_passage.test_passed? && @level == level.to_i
+
+    tests_count = Test.by_level(level).count
+    user_tests = @user.tests.by_level(level)
+
+    tests_count == user_tests.uniq.count &&
+      full_tests_count(user_tests) > badges_count(:all_in_level)
+  end
+
+  def first_attempt?(_param)
+    if @test_passage.test_passed?
+      @user.tests.where('test_id = ?', @test).count == 1
     end
   end
 
-  def all_in_level
-    tests_count = Test.by_level(@level).count
-    user_tests = @user.tests.by_level(@level)
-
-    if tests_count == user_tests.uniq.count &&
-       full_tests_count(user_tests) > badges_count(:all_in_level)
-      Badge.find_by_condition('all_in_level')
-    end
-  end
-
-  def first_attempt
-    if @user.tests.where('test_id = ?', @test).count == 1
-      Badge.find_by_condition('first_attempt')
-    end
-  end
-
-  def first_test
-    unless badges_count(:first_test).positive?
-      Badge.find_by_condition('first_test')
-    end
+  def first_test?(_param)
+    @test_passage.test_passed? && badges_count(:first_test).zero?
   end
 end
