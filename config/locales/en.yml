@@ -12,6 +12,12 @@ en:
         name: 'Name'
         email: 'Email'
         message: 'Message'
+      badge:
+        title: 'Title'
+        image: 'Image URL'
+        condition: 'Condition'
+        description: 'Description'
+
     select:
       prompt: 'Select category'
 
@@ -97,6 +103,20 @@ en:
       welcome: "Welcome, %{username} Guru"
       logout: 'Logout'
       logout_confirm: 'Are you sure you want to logout?'
+
+    badges:
+      index:
+        header: 'All badges'
+      new:
+        header: 'New badge'
+      badge:
+        edit: 'Edit'
+
+  badges:
+    index:
+      header: 'All badges'
+
+  new_badge: 'Create'
 
   services:
     gist_question_service:

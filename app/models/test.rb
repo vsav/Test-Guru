@@ -15,10 +15,18 @@ class Test < ApplicationRecord
   scope :by_category,
         lambda { |category|
           joins(:category)
-            .where('categories.title = ?', category.capitalize)
+            .where('categories.title = ?', category)
+        }
+  scope :by_level,
+        lambda { |level|
+          where('level = ?', level)
         }
 
   def self.tests_by_category(category)
     by_category(category).order(id: :desc).pluck(:title)
+  end
+
+  def self.tests_by_level(level)
+    by_level(level).pluck(:level)
   end
 end
