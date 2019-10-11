@@ -1,5 +1,8 @@
 <h1><%= t('.header', title: @test_passage.test.title ) %></h1>
 <h2><%= t('.question_number', current: @test_passage.current_question_number, total: @test_passage.test_questions_count ) %></h2>
+<% if @test_passage.test.timer %>
+  <%= content_tag :div,'', class: 'timer display-4', data: { test_timer: @test_passage.time_left } %>
+<% end %>
 
 <p>
   <strong> <%= @test_passage.current_question.body %> </strong>
@@ -9,7 +12,7 @@
                   role: 'progressbar',
                   data: { progress: @test_passage.progress } %>
 </div>
-<%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+<%= form_with url: test_passage_path(@test_passage), class: 'test_passage', local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
       <%= b.check_box id: "answer_ids_#{b.object.id}" %>
