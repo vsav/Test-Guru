@@ -8,6 +8,7 @@ en:
         title: 'Title'
         level: 'Level'
         category_id: 'Category'
+        timer: 'Time limit (min)'
       guru_letter:
         name: 'Name'
         email: 'Email'
@@ -50,6 +51,7 @@ en:
     result:
       header: "The %{title} test was completed"
       result_correct_answers: "Correct answers: %{correct} of %{total}"
+      time_to_pass: "Test passed in: %{time}"
       success_message: 'You have successfully completed the test. Your result: '
       failed_message: 'You have failed the test. Your result: '
     gist:
