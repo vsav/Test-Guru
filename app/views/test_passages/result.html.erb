@@ -5,10 +5,15 @@
   <%= t('.result_correct_answers', correct: @test_passage.correct_questions, total: @test_passage.test_questions_count ) %>
 </p>
 
-    <p>
-      <%= test_summary_message(@test_passage) %>
-      <span class=<%= test_summary_score_color(@test_passage) %>> <%= @test_passage.test_result %>%</span>
-    </p>
+<!--<p>
+  <%#= t('.time_to_pass', time: @test_passage.time_to_pass) %>
+</p>-->
+
+<p>
+  <%= test_summary_message(@test_passage) %>
+  <span class=<%= test_summary_score_color(@test_passage) %>> <%= @test_passage.test_result %>%</span>
+</p>
+
 <div class="row">
     <%= render @test_passage.user.badges %>
 </div>
