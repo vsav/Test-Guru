@@ -8,6 +8,7 @@ ru:
         title: 'Название'
         level: 'Уровень'
         category_id: 'Категория'
+        timer: 'Время на прохождение (мин)'
       guru_letter:
         name: 'Имя'
         email: 'Email'
@@ -55,8 +56,9 @@ ru:
 
   test_passages:
     result:
-      header: "Тест %{title} успешно завершен"
+      header: "Тест %{title} завершен"
       result_correct_answers: "Правильных ответов: %{correct} из %{total}"
+      time_to_pass: "Тест пройден за %{time}"
       success_message: 'Вы успешно завершили тест. Ваш результат: '
       failed_message: 'Вы провалили тест. Ваш результат: '
     gist:

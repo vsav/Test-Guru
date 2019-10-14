@@ -38,7 +38,27 @@ class TestPassage < ApplicationRecord
     (current_question_number.to_f / test_questions_count * 100).round(1)
   end
 
+  def time_left
+    (time_limit - Time.current).to_i if time_limit
+  end
+
+  def abort_test
+    self.current_question = nil
+  end
+
+  def time_is_up?
+   time_left && time_left.zero?
+  end
+
+  #def time_to_pass
+  #  test.timer * 60 - time_left
+  #end
+
   private
+
+  def time_limit
+    created_at + test.timer * 60 if test.timer.positive?
+  end
 
   def before_save_set_next_question
     self.current_question = next_question
