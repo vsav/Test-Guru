@@ -46,6 +46,10 @@ class TestPassage < ApplicationRecord
     self.current_question = nil
   end
 
+  def time_is_up?
+   time_left && time_left.zero?
+  end
+
   #def time_to_pass
   #  test.timer * 60 - time_left
   #end
