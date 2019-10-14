@@ -56,7 +56,7 @@ ru:
 
   test_passages:
     result:
-      header: "Тест %{title} успешно завершен"
+      header: "Тест %{title} завершен"
       result_correct_answers: "Правильных ответов: %{correct} из %{total}"
       time_to_pass: "Тест пройден за %{time}"
       success_message: 'Вы успешно завершили тест. Ваш результат: '
