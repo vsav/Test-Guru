@@ -1,4 +1,4 @@
-# Test-Guru
+# README
 
 Учебный проект Тест гуру онлайн-школы Thinknetica
 
