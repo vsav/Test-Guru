@@ -1,0 +1,41 @@
+AllCops:
+  Exclude:
+    - bin/**/*
+    - db/schema.rb
+    - db/seeds.rb
+    - node_modules/**/*
+    - vendor/**/*
+    - public/**/*
+    - tmp/**/*
+
+Style/Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Exclude:
+    - config/application.rb
+    - app/channels/**/*
+
+Metrics/LineLength:
+  Max: 100
+  IgnoredPatterns: ['\A#', '# rubocop:disable', ' < ', '\A\s*#']
+  Exclude:
+    - db/migrate/*
+    - test/**/*
+
+Metrics/AbcSize:
+  Max: 30
+  Exclude:
+    - db/migrate/*
+
+Metrics/BlockLength:
+  Exclude:
+    - config/environments/*.rb
+    - config/routes.rb
+    - test/**/*
+
+Metrics/MethodLength:
+  Exclude:
+    - test/**/*
+    - db/migrate/*

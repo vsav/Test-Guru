@@ -1,5 +1,6 @@
-class TestPassagesController < ApplicationController
+# frozen_string_literal: true
 
+class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show update result gist]
 
   def show; end
@@ -24,7 +25,8 @@ class TestPassagesController < ApplicationController
                      user: @test_passage.user, url: result[:html_url])
 
     if @gist.save!
-      flash[:notice] = t('.success', url: (helpers.link_to t('.view_gist'), @gist.url, target: '_blank'))
+      flash[:notice] = t('.success', url: (helpers.link_to t('.view_gist'), @gist.url,
+                                                           target: '_blank'))
     else
       flash[:alert] = t('.failure')
     end
@@ -41,5 +43,4 @@ class TestPassagesController < ApplicationController
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
   end
-
 end

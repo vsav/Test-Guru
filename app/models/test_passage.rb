@@ -1,5 +1,6 @@
-class TestPassage < ApplicationRecord
+# frozen_string_literal: true
 
+class TestPassage < ApplicationRecord
   SUCCESS = 85.0
 
   belongs_to :user
@@ -47,12 +48,12 @@ class TestPassage < ApplicationRecord
   end
 
   def time_is_up?
-   time_left && time_left.zero?
+    time_left&.zero?
   end
 
-  #def time_to_pass
+  # def time_to_pass
   #  test.timer * 60 - time_left
-  #end
+  # end
 
   private
 
@@ -79,5 +80,4 @@ class TestPassage < ApplicationRecord
       test.questions.order(:id).where('id > ?', current_question.id).first
     end
   end
-
 end

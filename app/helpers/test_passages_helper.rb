@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module TestPassagesHelper
   def test_summary_message(test)
     if test.test_passed?

@@ -1,5 +1,6 @@
-module User::Auth
+# frozen_string_literal: true
 
+module User::Auth
   extend ActiveSupport::Concern
 
   attr_reader :password
@@ -8,12 +9,12 @@ module User::Auth
   included do
     validates :username, presence: true
     validates :email, presence: true
-    validates :password, presence: true, if: Proc.new { |u| u.password_digest.blank? }
+    validates :password, presence: true, if: proc { |u| u.password_digest.blank? }
     validates :password, confirmation: true
   end
 
   def authenticate(password_string)
-    digest(password_string) == self.password_digest ? self : false
+    digest(password_string) == password_digest ? self : false
   end
 
   def password=(password_string)

@@ -1,5 +1,6 @@
-class TestsController < ApplicationController
+# frozen_string_literal: true
 
+class TestsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :find_test, only: %i[start]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found

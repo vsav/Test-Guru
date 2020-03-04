@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BadgeAwardService
   def initialize(test_passage)
     @test_passage = test_passage
@@ -45,9 +47,7 @@ class BadgeAwardService
   end
 
   def first_attempt?(_param)
-    if @test_passage.test_passed?
-      @user.tests.where('test_id = ?', @test).count == 1
-    end
+    @user.tests.where('test_id = ?', @test).count == 1 if @test_passage.test_passed?
   end
 
   def first_test?(_param)

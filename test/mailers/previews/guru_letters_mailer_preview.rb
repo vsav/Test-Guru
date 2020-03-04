@@ -1,5 +1,6 @@
-class GuruLettersMailerPreview < ActionMailer::Preview
+# frozen_string_literal: true
 
+class GuruLettersMailerPreview < ActionMailer::Preview
   def contact_us
     letter = GuruLetter.new(name: 'username',
                             email: 'username@example.org',
@@ -7,5 +8,4 @@ class GuruLettersMailerPreview < ActionMailer::Preview
 
     GuruLettersMailer.contact_us(letter)
   end
-
 end

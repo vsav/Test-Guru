@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Answer < ApplicationRecord
   belongs_to :question
 
@@ -11,5 +13,4 @@ class Answer < ApplicationRecord
   def answers_limit
     errors.add(:limit, 'question must have 1 to 4 answers') if question.answers.count >= 4
   end
-
 end

@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-2">
   <p>
     <strong>Title:</strong>
     <%= @test.title %>
@@ -16,9 +16,7 @@
 
   <p><strong>Questions:</strong></p>
 
-  <table>
-    <%= render @questions %>
-  </table>
+  <%= render @questions %>
 
   <p> <%= link_to 'Create new question', new_admin_test_question_path(@test) %></p>
   <p> <%= link_to 'Edit test', edit_admin_test_path(@test) %></p>

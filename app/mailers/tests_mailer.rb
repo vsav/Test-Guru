@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TestsMailer < ApplicationMailer
   default from: 'vsavdev@gmail.com'
 

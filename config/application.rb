@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -19,6 +21,6 @@ module TestGuru
     config.i18n.default_locale = :ru
     I18n.available_locales = %i[en ru]
 
-    #config.autoload_paths << "#{Rails.root}/lib/clients"
+    # config.autoload_paths << "#{Rails.root}/lib/clients"
   end
 end

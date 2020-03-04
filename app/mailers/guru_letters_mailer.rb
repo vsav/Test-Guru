@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class GuruLettersMailer < ApplicationMailer
   default to: -> { Admin.pluck(:email) },
           from: 'vsavdev@gmail.com'
