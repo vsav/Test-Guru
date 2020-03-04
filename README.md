@@ -1,34 +1,20 @@
-# README
+# Test-Guru
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Учебный проект Тест гуру онлайн-школы Thinknetica
 
-Things you may want to cover:
+Приложение позволяет проходить тесты.
 
-* Ruby version
+* Тесты отличаются по сложности и имеют ограничение по времени
+* Тест считается пройденным, если процент правильных ответов 85 и выше
+* Пользователь может создать gist для любого вопроса теста
+* За успешное прохождение тестов пользователь получает различные награды
+* После прохождения теста пользователю отправляется письмо с результатами
 
-* System dependencies
+В проекте Test-Guru используются следующие сущности:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-В проекте Test-Guru будут следующие сущности:
-
-Test - для самих тестов (вопросы и варианты ответов)
-Question - для вопросов тестов
-Answer - для ответов
-User - для администраторов и пользователей, проходящих тесты
-Result - для результатов тестов
-
-
+* Test - для самих тестов (вопросы и варианты ответов)
+* Question - для вопросов тестов
+* Answer - для ответов
+* User - для администраторов и пользователей, проходящих тесты
+* Result - для результатов тестов
+* Badge - для наград
