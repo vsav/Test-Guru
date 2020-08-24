@@ -17,15 +17,15 @@ categories = Category.create!([{ title: 'Programming' }, { title: 'Auto' },
 #                       { username: 'Lea', email: 'lea@rebel.mail', password: 'qweqwe' },
 #                       { username: 'Lando', email: 'lando@cloud.city', password: 'qweqwe' }])
 
-tests = Test.create!([{ title: 'HTML', category: categories[0], level: 0, author: users[0] },
-                      { title: 'Ruby', category: categories[0], level: 1, author: users[0] },
-                      { title: 'RoR', category: categories[0], level: 1, author: users[0] },
-                      { title: 'Manufacturers', category: categories[1], level: 0, author: users[1] },
-                      { title: 'Autosport', category: categories[1], level: 2, author: users[1] },
-                      { title: 'Music history', category: categories[2], level: 2, author: users[2] },
-                      { title: 'Musical instruments', category: categories[2], level: 1, author: users[2] },
-                      { title: 'Movies history', category: categories[3], level: 1, author: users[3] },
-                      { title: 'Actors', category: categories[3], level: 0, author: users[3] }])
+tests = Test.create!([{ title: 'HTML', category: categories[0], level: 0, author: users[0], timer: 60 },
+                      { title: 'Ruby', category: categories[0], level: 1, author: users[0], timer: 45 },
+                      { title: 'RoR', category: categories[0], level: 1, author: users[0], timer: 45 },
+                      { title: 'Manufacturers', category: categories[1], level: 0, author: users[1], timer: 60 },
+                      { title: 'Autosport', category: categories[1], level: 2, author: users[1], timer: 30 },
+                      { title: 'Music history', category: categories[2], level: 2, author: users[2], timer: 30 },
+                      { title: 'Musical instruments', category: categories[2], level: 1, author: users[2], timer: 45 },
+                      { title: 'Movies history', category: categories[3], level: 1, author: users[3], timer: 45 },
+                      { title: 'Actors', category: categories[3], level: 0, author: users[3], timer: 60 }])
 
 questions = Question.create!([{ body: 'What abbreviation HTML means?', test: tests[0] },
                               { body: "Who is 'Matz'?", test: tests[1] },
